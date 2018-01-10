@@ -64,7 +64,15 @@ public class MainActivity extends AppCompatActivity {
 
         builder.setContentTitle("測試");
         builder.setContentText("這是內容");
-        builder.setSmallIcon(R.mipmap.ic_launcher);
+        if(Build.VERSION.SDK_INT >= 26) //左上角小圖的寬度因版本而異，所以也要分版本秀，不然會當機
+        {
+            builder.setSmallIcon(R.drawable.ic_launcher_foreground);
+        }
+        else
+        {
+            builder.setSmallIcon(R.mipmap.ic_launcher);
+        }
+
         builder.setAutoCancel(true);
         builder.setContentIntent(pi);
 
