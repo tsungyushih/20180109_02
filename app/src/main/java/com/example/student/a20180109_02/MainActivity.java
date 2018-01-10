@@ -14,6 +14,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
     String idLove = "LOVE";
+    final int NOTIFICATION_ID=123123;
     NotificationChannel channelLove;
     NotificationManager nm;
     @Override
@@ -77,7 +78,11 @@ public class MainActivity extends AppCompatActivity {
         builder.setContentIntent(pi);
 
         Notification notify = builder.build();
-        nm.notify(1, notify);
+        nm.notify(NOTIFICATION_ID, notify);
 
+    }
+    public void click2 (View v)
+    {
+        nm.cancel(NOTIFICATION_ID);
     }
 }
